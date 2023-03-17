@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: a9fbb93348a29b64eb8027088a83bfa7
-  - enabled: 1
-    path: Assets/Scenes/AudioManager.unity
-    guid: 494a6ffd692de7d429410fa699ab7697
-  - enabled: 1
-    path: Assets/Scenes/Settings.unity
-    guid: a69c448163a132244953adbf3bdb3aa3
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

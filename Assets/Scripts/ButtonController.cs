@@ -7,15 +7,34 @@ public class ButtonController : MonoBehaviour
 {
     [SerializeField] private string newGameLevel1 = "Level1";
     [SerializeField] private string MainMenu = "Main Menu";
+
+    AudioManager audioManagerScript;
+    GameObject amgo;
     private void Awake()
     {
-        AutoSetDiff();
+        if(PlayerPrefs.HasKey("difficulty") == false)
+        {
+            AutoSetDiff(); 
+        }
     }
 
-    private void Update()
+    private void Start()
+    {
+        amgo = GameObject.Find("AudioManager");
+
+        //create a reference to the AudioManager
+        audioManagerScript = amgo.GetComponent<AudioManager>();
+
+        
+    }
+
+    void Update()
     {
         string diff = PlayerPrefs.GetString("difficulty");
         print("difficulty is " + diff);
+
+
+
     }
 
     public void LoadLevelOne()
@@ -44,4 +63,23 @@ public class ButtonController : MonoBehaviour
     {
         PlayerPrefs.SetString("difficulty", "hard");
     }
+
+    public void Quit()
+    {
+       Application.Quit();
+    }
+
+
+    public void SetMusicVolume( float vol )
+    {
+        print("music vol=" + vol);
+        audioManagerScript.SetMusicVolume(vol);
+    }
+
+    public void SetSFXVolume(float vol)
+    {
+        print("sfx vol=" + vol);
+        audioManagerScript.SetSFXVolume(vol);
+    }
+
 }
